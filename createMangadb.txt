@@ -1,0 +1,37 @@
+CREATE DATABASE mangadb CHARACTER SET utf8 COLLATE utf8_general_ci;
+use mangadb;
+
+CREATE TABLE IF NOT EXISTS `donate` (
+ `Id` int(11) NOT NULL AUTO_INCREMENT,
+ `fullname` varchar(255) NOT NULL,
+ `money`  varchar(50) NOT NULL,
+ PRIMARY KEY (`id`)
+ );
+
+CREATE TABLE IF NOT EXISTS `users` (
+ `Id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(50) NOT NULL UNIQUE,
+ `password` varchar(50) NOT NULL,
+ `name` varchar(255) NOT NULL,
+ `address`  varchar(255) NOT NULL,
+ `decen` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
+ );
+
+CREATE TABLE IF NOT EXISTS `images` (
+ `Id` int(11) NOT NULL AUTO_INCREMENT,
+ `image` varchar(255) NOT NULL UNIQUE,
+ `description`  text NOT NULL,
+ PRIMARY KEY (`id`)
+ );
+
+CREATE TABLE IF NOT EXISTS `Infor` (
+ `Id` int(11) NOT NULL AUTO_INCREMENT,
+ `Storyname` varchar(255) NOT NULL UNIQUE,
+ `Category`  varchar(50) NOT NULL,
+ `Artist` varchar(255) NOT NULL,
+ `Link` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
+ );
+
+INSERT INTO `users`(`username`,`password`,`decen`) values('TrungHieu',md5('518H0090'),'1');
